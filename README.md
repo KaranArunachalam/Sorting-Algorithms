@@ -36,12 +36,13 @@ print(num)
 ### ii)	Insertion Sort
 ```Python
 num=eval(input())
-for i in range(len(num)):
-    low=i
-    for j in range(i+1,len(num)):
-        if num[j]<num[low]:
-            low=j
-    num[i],num[low]=num[low],num[i]
+for i in range(1,len(num)):
+    insert=num[i]
+    j=i-1
+    while j>=0 and num[j]>=insert:
+        num[j+1]=num[j]
+        j=j-1
+    num[j+1]=insert
 print(num)
 ```
 ## Output:
